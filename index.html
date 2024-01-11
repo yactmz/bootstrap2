@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<title>API Connect</title>
+		<link rel="icon" type="image/x-icon" href="./favicon.ico" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65"
+			crossorigin="anonymous"
+		/>
+		<style>
+			.toast-header img {
+				max-width: 50px;
+			}
+			.btn-success {
+				border-radius: 50%;
+				height: 46px;
+				width: 44px;
+				display: flex;
+				align-items: center;
+				justify-content: center;
+			}
+			.position-absolute {
+				right: clamp(30px, 6%, 400px);
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container">
+			<h1 class="text-center">My Favorite Books</h1>
+
+			<section
+				class="app row row-cols-1 row-cols-sm-2 row-cols-md-3 g-2"
+			></section>
+			<div class="spinner-container">
+				<div class="d-flex justify-content-center m-5">
+					<div class="spinner-border" role="status">
+						<span class="visually-hidden">Loading...</span>
+					</div>
+				</div>
+			</div>
+			<div class="position-absolute">
+				<button
+					class="btn btn-success mt-2 add-btn"
+					data-bs-toggle="modal"
+					data-bs-target="#bookModal"
+				>
+					<img src="./assets/plus-circle.svg" alt="add btn" />
+				</button>
+			</div>
+		</div>
+
+		<!-- Modal -->
+		<div
+			class="modal fade"
+			id="bookModal"
+			tabindex="-1"
+			aria-labelledby="exampleModalLabel"
+			aria-hidden="true"
+		>
+			<div class="modal-dialog">
+				<div class="modal-content">
+					<div class="modal-header">
+						<h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+						<button
+							type="button"
+							class="btn-close"
+							data-bs-dismiss="modal"
+							aria-label="Close"
+						></button>
+					</div>
+					<div class="modal-body">...</div>
+					<div class="modal-footer">
+						<button
+							type="button"
+							class="btn btn-secondary"
+							data-bs-dismiss="modal"
+						>
+							Close
+						</button>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<!--  TOAST  -->
+		<div
+			aria-live="polite"
+			aria-atomic="true"
+			class="d-flex justify-content-center align-items-center w-100"
+		>
+			<div
+				id="liveToast"
+				class="toast"
+				role="alert"
+				aria-live="assertive"
+				aria-atomic="true"
+			>
+				<div class="toast-header bg-light">
+					<img src="./assets/ok.jpg" class="rounded me-2" alt="ok message" />
+					<strong class="me-auto">Message</strong>
+					<button
+						type="button"
+						class="btn-close"
+						data-bs-dismiss="toast"
+						aria-label="Close"
+					></button>
+				</div>
+				<div class="toast-body bg-secondary text-white">...</div>
+			</div>
+		</div>
+
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-kenU1KFdBIe4zVF0s0G1M5b4hcpxyD9F7jL+jjXkk+Q2h455rYXK/7HAuoJl+0I4"
+			crossorigin="anonymous"
+		></script>
+		<script src="./script.js"></script>
+	</body>
+</html>
